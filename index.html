@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ajaia Docs — Your team's words, together</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">a<span>✦</span></div><div><strong>ajaia<span class="brandmuted">docs</span></strong><small>TEAM WORKSPACE</small></div></div>
+    <div class="workspace-tag"><span class="workspace-dot"></span> Demo workspace <span class="tag">LOCAL</span></div>
+    <button class="primary new-doc" id="newDoc"><span>＋</span> New document <span class="shortcut">N</span></button>
+    <label class="import-btn" for="fileUpload"><span>⇧</span> Import .txt / .md</label><input id="fileUpload" type="file" accept=".txt,.md,text/plain,text/markdown" hidden>
+    <div class="nav-label">YOUR SPACE</div>
+    <button class="nav active" data-view="all"><span>▦</span> All documents <span id="allCount">0</span></button>
+    <button class="nav" data-view="owned"><span>▤</span> My documents <span id="ownedCount">0</span></button>
+    <button class="nav" data-view="shared"><span>♧</span> Shared with me <span id="sharedCount">0</span></button>
+    <div class="sidebar-foot"><div class="tip-icon">✧</div><strong>Made for momentum</strong><p>Focus on your ideas. Everything saves as you go.</p></div>
+    <div class="profile"><div class="avatar" id="avatar">AM</div><div class="profile-details"><strong id="profileName">Alex Morgan</strong><small>Switch demo account</small></div><select id="userSwitch" aria-label="Switch demo user"><option value="1">Alex</option><option value="2">Sam</option></select></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="crumb">Workspace <span>/</span> <strong id="breadcrumb">All documents</strong></div><div class="top-actions"><span class="demo-pill">● Demo mode</span><span id="status" role="status">Ready</span></div></header>
+    <section id="home" class="home"><div class="home-head"><div class="eyebrow">YOUR WORKSPACE, REIMAGINED</div><h1 id="greeting">Good to see you, Alex <span>✳</span></h1><p>Every great idea starts with a blank page. What will you create today?</p><div class="home-actions"><button id="heroNew" class="primary">＋ Create a document</button><label class="secondary" for="fileUpload">⇧ Import a file</label></div></div>
+      <div class="library-title"><div><h2 id="listTitle">All documents</h2><p id="listSubtitle">Everything you're working on, in one place.</p></div><span id="docCount">0 documents</span></div><div id="docGrid" class="doc-grid"></div><div id="empty" class="empty" hidden><div class="empty-icon">✎</div><h3>Something great begins here</h3><p>Create a document or import a file to get started.</p><button class="primary" id="emptyNew">Create your first document</button></div>
+    </section>
+    <section id="editorView" class="editor-view" hidden><div class="editor-head"><button class="back" id="backHome" aria-label="Back to documents">←</button><div class="title-wrap"><input id="docTitle" aria-label="Document title" maxlength="100"><span id="docMeta">Your document</span></div><div class="editor-actions"><span id="saveState">All changes saved</span><button class="secondary share-btn" id="shareBtn">♧ Share</button><button class="dots" id="deleteBtn" title="Delete document">⋯</button></div></div><div class="toolbar" role="toolbar" aria-label="Formatting"><button data-command="bold" title="Bold (Ctrl+B)"><b>B</b></button><button data-command="italic" title="Italic (Ctrl+I)"><i>I</i></button><button data-command="underline" title="Underline (Ctrl+U)"><u>U</u></button><span class="separator"></span><select id="formatBlock" aria-label="Paragraph style"><option value="p">Normal text</option><option value="h1">Heading 1</option><option value="h2">Heading 2</option><option value="h3">Heading 3</option></select><span class="separator"></span><button data-command="insertUnorderedList" title="Bulleted list">☷</button><button data-command="insertOrderedList" title="Numbered list">☰</button><button data-command="removeFormat" title="Clear formatting">Tx</button><span class="toolbar-help">Select text to format</span></div><div class="paper-area"><div class="paper"><div id="editor" contenteditable="true" role="textbox" aria-label="Document content" aria-multiline="true" data-placeholder="Start writing something wonderful..."></div></div><div class="editor-footer"><span id="wordCount">0 words</span><span>Draft with intention ✦</span></div></div></section>
+  </main>
+</div>
+<div id="modalOverlay" class="overlay" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button id="closeModal" class="modal-close" aria-label="Close">×</button><div class="modal-symbol">♧</div><h2 id="modalTitle">Share document</h2><p id="shareDescription">Invite a teammate to collaborate on this document.</p><div id="shareControls"><label for="shareUser">Invite a teammate</label><div class="share-form"><select id="shareUser"></select><button id="grantShare" class="primary">Grant access</button></div></div><div class="share-list-title">PEOPLE WITH ACCESS</div><div id="shareList"></div><div class="modal-foot">Demo users can edit shared documents. Only owners can manage access.</div></div></div>
+<div id="toast" class="toast" role="alert" hidden></div>
+<script src="/script.js"></script></body></html>
